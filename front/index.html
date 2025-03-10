@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Veículos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <style>
+        .header {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 10px 30px;
+        }
+
+        .header a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+        }
+
+        .header img {
+            width: 10vh;
+        }
+</style>
+<div class="header">
+    <a href="index.html">Formulário</a>
+    <img src="../imagens/sfhmgsrtyj-removebg-preview.png" alt="Carro">
+    <a href="listagem.html">Listagem</a>
+</div>
+        <h1>a</h1>
+    </header>
+    <main>
+        <h1>CADASTRO DE VEICULO</h1>
+
+        <div class="formulario">
+            <form action="">
+                <input type="text" placeholder="PLACA" id="placa">
+                <input type="text" placeholder="DONO" id="dono">
+                <input type="text" placeholder="CPF DONO" id="cpf">
+                <select name="tipo" id="tipo">
+                    <option value="padrão">Padrão</option>
+                    <option value="gestante">Gestante</option>
+                    <option value="deficiente">Deficiente</option>
+                </select>
+                <select name="vaga" id="vaga">
+                    <option value="A1">A1</option>
+                    <option value="A2">A2</option>
+                    <option value="A3">A3</option>
+                    <option value="B1">B1</option>
+                    <option value="B2">B2</option>
+                    <option value="B3">B3</option>
+                    <option value="C1">C1</option>
+                    <option value="C2">C2</option>
+                    <option value="C3">C3</option>
+                </select>
+
+                <button onclick="cadastrar(event)" id="cadastrar">CADASTRAR</button>
+            </form>
+        </div>
+    </main>
+    <script src="./cadastro.js"></script>
+</body>
+</html>

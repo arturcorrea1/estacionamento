@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Veículos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <title>Listagem de Veículos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #2C3E40;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 10px 30px;
+        }
+
+        .header a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+        }
+
+        .header img {
+            width: 10vh;
+        }
+
+        .container {
+            margin-top: 20px;
+        }
+
+        .search-container input {
+            padding: 5px;
+            border-radius: 5px;
+            border: none;
+            width: 200px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            background-color: #455A64;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            color: white;
+        }
+
+        th {
+            background-color: #78909C;
+        }
+
+        .delete-btn {
+            color: red;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <a href="index.html">Formulário</a>
+        <img src="../imagens/sfhmgsrtyj-removebg-preview.png" alt="Carro">
+        <a href="listagem.html">Listagem</a>
+    </div>
+
+    <div class="container">
+        <h2>Lista de Veículos 📄</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>PLACA</th>
+                    <th>TIPO</th>
+                    <th>DONO</th>
+                    <th>CPF DONO</th>
+                    <th>VAGA</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+                <tr>
+
+                </tr>
+            </tbody>
+        </table>
+        
+    </main>
+
+    <script src="./listar.js"></script>
+</body>
+</html>
