@@ -1,8 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
-    document.getElementById("cadastrar").addEventListener("submit", cadastrar);
+    document.getElementById("cadastrar").addEventListener("click", cadastrar);
 });
 
-async function cadastrarCarro(event){
+
+async function cadastrar(event){
     event.preventDefault();
 
     const placa = document.getElementById("placa").value;
@@ -31,5 +32,5 @@ async function cadastrarCarro(event){
     } catch (error) {
         console.error("Erro ao cadastrar:", error);
         alert("Erro ao cadastrar. Verifique a conexão com o servidor.");
-    }
+    } 
 }

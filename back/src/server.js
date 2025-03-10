@@ -9,6 +9,11 @@ app.use(express.json());
 const port = 3000;
 app.listen(port, () => console.log(`Servidor rodando na porta ${port}`));
 
+app.use((req, res, next) => {
+  res.setHeader("Content-Security-Policy", "script-src 'self' 'unsafe-eval'");
+  next();
+});
+
 app.post("/cadastrar", (req, res) => {
   const { placa, dono, cpf, tipo, vaga } = req.body;
 
