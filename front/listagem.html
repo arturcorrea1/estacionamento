@@ -115,12 +115,13 @@
                 <input type="text" id="placa" required>
                 <label for="cpf">CPF:</label>
                 <input type="text" id="cpf" required>
-                <label for="vaga" id="frase_vaga">Escolha uma vaga:</label>
+                <label for="vaga" id="frase_vaga">Escolha um tipo:</label>
                 <select name="tipo" id="tipo">
                     <option value="padrão">Padrão</option>
                     <option value="gestante">Gestante</option>
                     <option value="deficiente">Deficiente</option>
                 </select>
+                <label for="vaga" id="frase_vaga">Escolha uma vaga:</label>
                 <select id="vaga">
                   <option value="A1">A1</option>
                   <option value="A2">A2</option>
@@ -132,7 +133,7 @@
                   <option value="C2">C2</option>
                   <option value="C3">C3</option>
                 </select>
-                <button onclick="editarCarro()">Salvar</button>
+                <button id="modal-btn" onclick="editar()">Salvar</button>
             </div>
         </div>
         
