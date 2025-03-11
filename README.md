@@ -1,6 +1,6 @@
 # Estacionamento
 
-## Este projeto é uma simulação de um estacionamento, contendo diversos campos preenchíveis, sendo eles:
+Este projeto é uma simulação de um estacionamento, contendo diversos campos preenchíveis, sendo eles:
 
 ### Placa
 ### Dono (Nome do dono do carro)
