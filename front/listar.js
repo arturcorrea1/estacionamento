@@ -2,6 +2,9 @@ document.addEventListener("DOMContentLoaded", () => {
     listar()
 });
 
+let placaAntiga = "";
+let placaNova = "";
+
   async function listar() {
     const tbody = document.getElementById("tbody");
 
@@ -76,7 +79,8 @@ async function editar() {
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({placaAntiga, dono, placaNova, cpf, tipo, vaga })
+        body: JSON.stringify({ dono, placa: placaNova, cpf, tipo, vaga })
+
     });
 
     const result = await response.json();
