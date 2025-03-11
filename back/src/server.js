@@ -9,11 +9,6 @@ app.use(express.json());
 const port = 3000;
 app.listen(port, () => console.log(`Servidor rodando na porta ${port}`));
 
-app.use((req, res, next) => {
-  res.setHeader("Content-Security-Policy", "script-src 'self' 'unsafe-eval'");
-  next();
-});
-
 app.post("/cadastrar", (req, res) => {
   const { placa, dono, cpf, tipo, vaga } = req.body;
 
@@ -62,3 +57,30 @@ app.post("/cadastrar", (req, res) => {
       res.json({ success: true, message: 'Carro removido com sucesso!' });
     });
   });
+
+app.delete('/deletar/:placa', (req, res) => {
+    const {placa } = req.params;
+    const query = 'DELETE FROM usuario WHERE placa = ?';
+    connection.query(query, [placa], (err) => {
+      if (err) {
+        return res.status(500).json({ success: false, message: 'Erro ao remover carro.' });
+      }
+      res.json({ success: true, message: 'Carro removido com sucesso!' });
+    });
+});
+
+app.put('/editar/:placa', (req, res) => {
+  const placaAntiga = req.params.placa;
+  const {dono, placaNova, cpf, tipo, vaga } = req.body;
+
+  console.log('Recebendo requisição para editar:', { placaAntiga, dono, placaNova, cpf, tipo, vaga });
+
+  const query = 'UPDATE usuario SET placa=?, dono=?, cpf=?, tipo=?, vaga=? WHERE placa=?';
+  connection.query(query, [placaNova, dono, cpf, tipo, vaga, placaAntiga], (err) => {
+      if (err) {
+          console.error('Erro no banco de dados:', err);
+          return res.status(500).json({ success: false, message: 'Erro ao atualizar carro.' });
+      }
+      res.json({ success: true, message: 'Carro atualizado com sucesso!' });
+  });
+});
